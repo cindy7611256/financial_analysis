@@ -1,0 +1,45 @@
+Sub KeepOnlySpecificSheets()
+    Dim ws As Worksheet
+    Dim sheetToKeep As Variant
+    Dim found As Boolean
+    Dim deletedSheetName As String ' 新增一個變數來儲存被刪除的工作表名稱
+    
+    ' !!! 重要：請在這裡列出您要保留的確切工作表名稱 !!!
+    ' 例如，只保留您抽取到的主要財務報表表格
+    Dim sheetsToKeep As Variant
+    sheetsToKeep = Array("簡明合併資產負債表", "簡明合併損益表", "合併綜合損失表", "合併現金流量表", "簡明合併財務報表附註")  ' <-- 修改這裡的名稱
+
+    ' 關閉警告提示，避免每次刪除都跳出確認
+    Application.DisplayAlerts = False
+
+    ' 反向遍歷工作表，因為刪除工作表會改變集合的索引
+    For i = ThisWorkbook.Sheets.Count To 1 Step -1
+        Set ws = ThisWorkbook.Sheets(i)
+        found = False
+        For Each sheetToKeep In sheetsToKeep
+            ' 使用 InStr 函數進行部分匹配，因為表格名稱可能被截斷或有額外空格
+            ' 如果工作表名稱包含保留清單中的任何一個字串，就視為要保留
+            ' 注意：這裡使用 InStr 會有更高的容錯率，但可能導致誤判，請根據實際情況調整
+            ' 如果您需要精確匹配，請改回 If ws.Name = sheetToKeep Then
+            If InStr(1, ws.Name, sheetToKeep, vbTextCompare) > 0 Then
+                found = True
+                Exit For
+            End If
+        Next sheetToKeep
+
+        If Not found Then
+            ' 檢查是否只有一個工作表，Excel 不允許刪除最後一個工作表
+            If ThisWorkbook.Sheets.Count > 1 Then
+                ' 在刪除之前，先取得工作表名稱
+                deletedSheetName = ws.Name
+                ws.Delete
+                Debug.Print "已刪除工作表: " & deletedSheetName ' 使用儲存的名稱
+            Else
+                Debug.Print "無法刪除最後一個工作表: " & ws.Name
+            End If
+        End If
+    Next i
+
+    Application.DisplayAlerts = True ' 重新啟用警告提示
+    MsgBox "工作表清理完成！只保留了您指定的頁面。", vbInformation
+End Sub

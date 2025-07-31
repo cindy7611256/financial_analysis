@@ -1,0 +1,131 @@
+Assets	資產
+Current assets:	流動資產：
+Cash and cash equivalents	現金及約當現金
+Accounts receivable (net of allowances of...)	應收帳款（扣除備抵呆帳後）
+Inventory	存貨
+Prepaids and other current assets	預付費用及其他流動資產
+Total current assets	流動資產合計
+Property, plant and equipment, net	不動產、廠房及設備（淨額）
+Lease right-of-use assets	租賃使用權資產
+Deferred tax assets, net	遞延所得稅資產（淨額）
+Goodwill	商譽
+Trademarks and brands, net	商標及品牌權（淨額）
+Customer and distributor relationships, net	客戶及經銷合作關係（淨額）
+Core technologies, net	核心技術（淨額）
+Other assets	其他資產
+Total assets	資產總額
+
+Liabilities and stockholders' equity　負債及股東權益
+Current liabilities:	流動負債：
+Accounts payable	應付帳款
+Accrued expenses	應計費用
+Current portion of long-term debt	長期負債—一年內到期部分
+Total current liabilities	流動負債合計
+Revolver	週轉信貸
+Term Loans, less current portion	分期貸款（扣除一年內到期部分）
+Other liabilities	其他負債
+Total liabilities	負債總額
+Commitments and contingencies	承諾及或有事項（參見附註8）
+Non-controlling interest	非控制權益（少數股東權益）
+
+Stockholders’ equity	股東權益
+Preferred stock, $0.001 par value — 10,000 authorized...	優先股，每股面值0.001美元，核准發行10,000股，目前無發行
+Common stock, $0.001 par value — 90,000 authorized...	普通股，每股面值0.001美元，核准發行90,000股，已發行/流通股數如表
+Additional paid-in capital	資本公積
+Treasury stock, at cost; ...	庫藏股（成本法計算；持有股數如表）
+Accumulated other comprehensive (loss) income	累積其他綜合（損失）收益
+Retained earnings	保留盈餘
+Total stockholders’ equity	股東權益合計
+Total liabilities and stockholders’ equity	負債及股東權益總額
+
+Condensed Consolidated Statements of Loss
+合併損益表（簡明版）
+收入與成本 Net Sales and Cost
+Net sales	淨銷售額
+Cost of sales	銷貨成本
+Gross profit	毛利
+營業費用 Operating Expenses
+Operating expenses:	營業費用：		
+Goodwill impairment	商譽減損
+General and administrative	一般及管理費用
+Sales and marketing	銷售及行銷費用
+Research and development	研發費用
+Amortization of purchased intangibles	已購無形資產攤銷
+Total operating expenses	營業費用合計
+營業(虧損)收入及其他 (Loss) Income from Operations, Interest, Other
+(Loss) income from operations	營業（虧損）／收入
+Interest expense	利息費用
+Other (income) expense, net	其他（收入）／費用, 淨額
+Loss before income taxes	稅前淨損
+Benefit from income taxes	所得稅利益
+Net loss	本期淨損
+歸屬於母公司之損失 Net Loss Attributable to FOX Stockholders
+Less: net loss attributable to non-controlling interest	減：非控制權益之淨損
+Net loss attributable to FOX stockholders	歸屬於FOX股東之本期淨損
+
+Condensed Consolidated Statements of Comprehensive Loss
+合併綜合損失表（簡明版）
+（單位：千美元，未經查核）
+
+
+Net loss	淨損
+Other comprehensive (loss) income	其他綜合（損失）收益		
+Interest rate swap Change in net unrealized gains	利率交換：未實現淨收益變動
+Reclassification of net gains on interest rate swap to net earnings	將利率交換的淨收益重分類至（本期）損益
+Tax effects	稅務影響
+Net change, net of tax effects	稅後淨變動
+Foreign currency translation adjustments	外幣換算差額調整
+Other comprehensive loss	其他綜合損失
+Comprehensive loss	綜合損失
+Less: comprehensive loss attributable to non-controlling interest	減：歸屬於非控制性權益之綜合損失（少數股東）
+Comprehensive loss attributable to FOX stockholders	歸屬於FOX股東之綜合損失
+The accompanying notes are an integral part of these condensed consolidated financial statements.	附註為本簡明合併財務報表不可分割的一部分	
+
+
+
+Condensed Consolidated Statements of Cash Flows
+合併現金流量表（簡明版）
+（單位：千美元，未經查核）
+
+
+OPERATING ACTIVITIES:	營業活動：		
+Net loss	淨損
+Adjustments to reconcile net loss to net cash (used in) provided by operating activities:	調整項目，使淨損與營業活動產生之現金(流入)流出數相符		
+Goodwill impairment	商譽減損
+Depreciation and amortization	折舊及攤銷
+Provision for inventory reserve	存貨跌價（損失）提列
+Stock-based compensation	股票基礎報酬費用
+Amortization of acquired inventory step-up	取得存貨增值攤銷
+Amortization of loan fees	借款費用攤銷
+Amortization of deferred gains on prior swap settlements	前期交換結算遞延收益攤銷
+Proceeds from interest rate swap settlements	利率交換結算所得
+Loss on disposal of property and equipment	處分不動產廠房設備損失
+Deferred taxes	遞延所得稅
+Changes in operating assets and liabilities, net of effects of acquisitions:	營業資產及負債變動（扣除併購影響）		
+Accounts receivable	應收帳款變動
+Inventory	存貨變動
+Income taxes	所得稅變動
+Prepaids and other assets	預付費用及其他資產變動
+Accounts payable	應付帳款變動
+Accrued expenses and other liabilities	應計費用及其他負債變動
+Net cash (used in) provided by operating activities	營業活動現金流入（流出）淨額
+
+INVESTING ACTIVITIES:	投資活動：		
+Purchases of property and equipment	購置不動產、廠房及設備
+Acquisitions of businesses, net of cash acquired	企業合併（扣除取得現金）
+Acquisition of other assets, net of cash acquired	取得其他資產（扣除取得現金）
+Net cash used in investing activities	投資活動現金流出淨額
+
+FINANCING ACTIVITIES:	籌資活動：		
+Proceeds from revolver	取得週轉信貸款
+Payments on revolver	償還週轉信貸款
+Repayment of term debt	償還分期貸款
+Purchase and retirement of common stock	購買並註銷普通股
+Repurchases from stock compensation program, net	員工股票酬勞計畫購回（淨額）
+Net cash provided by (used in) financing activities	籌資活動現金流入（流出）淨額
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS	匯率變動對現金及約當現金之影響
+CHANGE IN CASH AND CASH EQUIVALENTS	現金及約當現金增加（減少）
+CASH AND CASH EQUIVALENTS—Beginning of period	期初現金及約當現金
+CASH AND CASH EQUIVALENTS—End of period	期末現金及約當現金
+The accompanying notes are an integral part of these condensed consolidated financial statements.	附註為本簡明合併財務報表不可分割的一部分
