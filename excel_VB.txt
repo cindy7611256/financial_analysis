@@ -7,7 +7,7 @@ Sub KeepOnlySpecificSheets()
     ' !!! 重要：請在這裡列出您要保留的確切工作表名稱 !!!
     ' 例如，只保留您抽取到的主要財務報表表格
     Dim sheetsToKeep As Variant
-    sheetsToKeep = Array("簡明合併資產負債表", "簡明合併損益表", "合併綜合損失表", "合併現金流量表", "簡明合併財務報表附註")  ' <-- 修改這裡的名稱
+    sheetsToKeep = Array("合併")  ' <-- 修改這裡的名稱,會留下有"合併"字眼的資料表
 
     ' 關閉警告提示，避免每次刪除都跳出確認
     Application.DisplayAlerts = False

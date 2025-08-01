@@ -49,7 +49,25 @@ financial_terms_map = {
     "Less: comprehensive loss attributable to non-controlling interest": "減：歸屬於非控制性權益之綜合損失（少數股東）",
     "Comprehensive loss attributable to FOX stockholders": "歸屬於FOX股東之綜合損失",
     "The accompanying notes are an integral part of these condensed consolidated financial statements.": "附註為本簡明合併財務報表不可分割的一部分",
-
+    "Other expense, net": "其他費用,淨額",
+    "Income before income taxes": "稅前淨利",
+    "(Benefit) provision for income taxes": "(利益)所得稅",
+    "Net income": "淨利",
+    "Issuance of common stock under equity compensation plans":"根據股權獎勵計畫發行普通股",
+    "net of shares repurchased for income tax" : "扣除因所得稅而買回的股份",
+    "withholding" : "扣繳",
+    "Purchase and retirement of common stock" : "購買並註銷普通股",
+    "Stock-based compensation expense" : "股票基礎報酬費用",
+    "Other comprehensive loss" : "其他綜合損失",
+    "Net loss" : "本期淨損",
+    "Balance": "餘額",
+    "Revenue" : "營業收入",
+    "Interest expense" : "利息費用",
+    "Other expense, net" : "其他費用，淨額",
+    "(Loss) Income before income taxes" : "稅前(虧損)利潤",
+    "(Benefit) Provision for income taxes" : "所得稅(利益)費用",
+    "Net (loss) income" : "淨(虧損)利潤",
+    "(Loss) Earnings per share" : "每股(虧損)盈餘",
 
     # 資產
     "Assets": "資產",
@@ -83,15 +101,15 @@ financial_terms_map = {
     "Commitments and contingencies": "承諾及或有事項（參見附註8）",
 
     # 股東權益
-    "Stockholders’ equity": "股東權益",
+    "Stockholders' equity": "股東權益",
     "Preferred stock, $0.001 par value — 10,000 authorized...": "優先股，每股面值0.001美元，核准發行10,000股，目前無發行",
     "Common stock, $0.001 par value — 90,000 authorized...": "普通股，每股面值0.001美元，核准發行90,000股，已發行/流通股數如表",
     "Additional paid-in capital": "資本公積",
     "Treasury stock, at cost; ...": "庫藏股（成本法計算；持有股數如表）",
     "Accumulated other comprehensive (loss) income": "累積其他綜合（損失）收益",
     "Retained earnings": "保留盈餘",
-    "Total stockholders’ equity": "股東權益合計",
-    "Total liabilities and stockholders’ equity": "負債及股東權益總額",
+    "Total stockholders' equity": "股東權益合計",
+    "Total liabilities and stockholders' equity": "負債及股東權益總額",
 
     # 現金流量表 - 營業活動
     "OPERATING ACTIVITIES:": "營業活動：",
@@ -112,6 +130,34 @@ financial_terms_map = {
     "Accounts payable": "應付帳款變動",
     "Accrued expenses and other liabilities": "應計費用及其他負債變動",
     "Net cash (used in) provided by operating activities": "營業活動現金流入（流出）淨額",
+    "Income tax payment" : "所得稅支付",
+    "Interest" : "利息",
+    "Amounts included in the measurement of lease liabilities" : "計入租賃負債的金額",
+    "Non-cash operating activities" : "非現金營業活動",
+    "Right-of-use assets obtained in exchange for lease obligations" : "為換取租賃義務而取得之使用權資產",
+    "Non-cash investing and financing activities" : "非現金投資及籌資活動",
+    "Capital expenditures included in accounts payable" : "應付帳款中包含的資本支出",
+    "Write off of unamortized loan origination fees" : "沖銷未攤銷之貸款手續費",
+    "Proceeds from (cash paid for) interest rate swap settlements" : "利率交換結算收到的現金（或支付的現金）",
+    "Loss (gain) on disposal of property and equipment" : "處分不動產、廠房及設備的損失（利益）",
+    "Net cash provided by operating activities" : "營業活動之淨現金流入",
+    "Net income": "淨利",
+    "Depreciation and amortization":	"折舊及攤銷",
+    "Provision for inventory reserve":	"存貨準備提列",
+    "Stock-based compensation":	"股份基礎薪酬",
+    "Amortization of acquired inventory step-up": "併購存貨價值攤銷",
+    "Amortization of loan fees":	"貸款費用攤銷",
+    "Write off of unamortized loan origination fees":	"未攤銷貸款起始費用沖銷",
+    "Amortization of deferred gains on prior swap settlements":	"先前掉期結算遞延收益攤銷",
+    "Proceeds from (cash paid for) interest rate swap settlements":	"利率掉期結算現金流入（流出）",
+    "Loss (gain) on disposal of property and equipment":	"處分不動產設備損失（收益）",
+    "Deferred taxes":	"遞延所得稅",
+    "Income taxes":	"所得稅變動",
+    "Prepaids and other assets": "預付費用及其他資產變動",
+    "Accounts payable":	"應付帳款變動",
+    "Accrued expenses and other liabilities": "應計費用及其他負債變動",
+    "Net cash provided by operating activities":	"營業活動提供之現金淨額",
+    
 
     # 現金流量表 - 投資活動
     "INVESTING ACTIVITIES:": "投資活動：",
@@ -119,6 +165,17 @@ financial_terms_map = {
     "Acquisitions of businesses, net of cash acquired": "企業合併（扣除取得現金）",
     "Acquisition of other assets, net of cash acquired": "取得其他資產（扣除取得現金）",
     "Net cash used in investing activities": "投資活動現金流出淨額",
+    "Acquisition of businesses, net of cash acquired" : "併購業務（扣除所取得之現金）",
+    "Acquisition foreign exchange hedge settlement" : "併購外匯避險結算",
+    "Acquisition of other assets" : "取得其他資產",
+    "Proceeds from sale of property and equipment" : "處分不動產、廠房及設備之收入",
+    "Acquisition of businesses, net of cash acquired":	"併購業務（扣除取得現金）",
+    "Acquisition foreign exchange hedge settlement":  "外匯避險結算款",
+    "Acquisition of other assets":	"其他資產購置",
+    "Purchases of property and equipment":	"不動產、廠房及設備購置",
+    "Proceeds from sale of property and equipment":	"處分不動產設備收益",
+    "Net cash used in investing activities": "投資活動使用現金淨額",
+    
 
     # 現金流量表 - 籌資活動
     "FINANCING ACTIVITIES:": "籌資活動：",
@@ -128,6 +185,25 @@ financial_terms_map = {
     "Purchase and retirement of common stock": "購買並註銷普通股",
     "Repurchases from stock compensation program, net": "員工股票酬勞計畫購回（淨額）",
     "Net cash provided by (used in) financing activities": "籌資活動現金流入（流出）淨額",
+    "Proceeds from line of credit, net of origination fees" : "循環信用貸款收入（扣除手續費）",
+    "Proceeds from issuance of debt" : "發行債務收入",
+    "Installment on purchase of non-controlling interest" : "購買非控制性權益之分期付款",
+    "Deferred debt issuance/modification costs" : "遞延發債/修改成本",
+    "Proceeds from termination of swap agreement" : "終止交換協議之收入",
+    "Net cash (used in) provided by financing activities" : "籌資活動之淨現金（流出）流入",
+    "Proceeds from line of credit, net of origination fees": "信用額度淨取得款",
+    "Payments on revolver":	"循環信貸還款",
+    "Proceeds from issuance of debt":	"債務發行收入",
+    "Repayment of term debt":	"定期貸款償還",
+    "Purchase and retirement of common stock":	"普通股買回與註銷",
+    "Installment on purchase of non-controlling interest":	"非控股權益分期購買",
+    "Repurchases from stock compensation program, net":	"股票薪酬計劃買回淨額",
+    "Deferred debt issuance/modification costs":	"債務發行及修改遞延成本",
+    "Proceeds from termination of swap agreement":	"掉期協議終止收入",
+    "Net cash (used in) provided by financing activities":	"融資活動淨現金流入（流出）",
+    "Effect of exchange rate changes on cash and cash equivalents":	"匯率變動對現金及約當現金影響",
+    "Change in cash and cash equivalents":	"現金及約當現金淨變動",
+    "Cash and cash equivalents—Beginning of year":	"期初現金及約當現金",
 
     # 現金流量表 - 其他
     "EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS": "匯率變動對現金及約當現金之影響",
@@ -138,16 +214,11 @@ financial_terms_map = {
     "Income before income taxes": "稅前利潤",
     "(Benefit) provision for income taxes": "所得稅（利益）費用",
     "Net income": "淨利",
-
-Net income attributable to Fox stockholders: 歸屬於福克斯股東的淨利
-
-Earnings per share: 每股盈餘
-
-Basic: 基本
-
-Diluted: 稀釋
-
-Weighted-average shares used to compute earnings per share: 計算每股盈餘所用的加權平均股數
+    "Net income attributable to Fox stockholders": "歸屬於福克斯股東的淨利",
+    "Earnings per share": "每股盈餘",
+    "Basic": "基本",
+    "Diluted": "稀釋",
+    "Weighted-average shares used to compute earnings per share": "計算每股盈餘所用的加權平均股數",
 
     # 其他通用術語（來自原始數據）
     "Powered Vehicles Group": "動力車輛事業部",
@@ -159,6 +230,17 @@ Weighted-average shares used to compute earnings per share: 計算每股盈餘�
     "Unallocated corporate expenses": "未分配公司費用",
     "Acquisition related costs and expenses": "併購相關成本及費用",
     "Purchase accounting inventory fair value adjustment amortization": "購買會計存貨公允價值調整攤銷",
+    "Other comprehensive income (loss) ": "其他綜合收益（損失）",
+    "Interest rate swap" : "利率交換",
+    "Change in net unrealized gain": "未實現淨利得變動",
+    "Reclassification of net gain on interest rate swaps to net earnings" : "利率交換淨利得重分類至淨利",
+    "Tax effects" : "稅務影響",
+    "Net change, net of tax effects" : "稅後淨變動",
+    "Foreign currency translation adjustments" : "外幣換算差額調整",
+    "Other comprehensive (loss) income" : "其他綜合（損失）收益",
+    "Comprehensive (loss) income" : "綜合（損失）收益",
+    "Less: comprehensive loss attributable to non-controlling interest" : "減：歸屬於非控制權益之綜合損失",
+    "Comprehensive (loss) income attributable to Fox stockholders" : "歸屬於 Fox 股東之綜合（損失）收益",
 
     # 表格標題關鍵字 (用於識別 Sheet 名稱)
     "Condensed Consolidated Balance ": "簡明合併資產負債表",
@@ -256,6 +338,42 @@ financial_category_map = {
     "現金及約當現金增加（減少）": "其他",
     "期初現金及約當現金": "其他",
     "期末現金及約當現金": "其他",
+    "淨利": "營業活動",
+    "存貨準備提列": "營業活動",
+    "股份基礎薪酬": "營業活動",
+    "併購存貨價值攤銷": "營業活動",
+    "貸款費用攤銷": "營業活動",
+    "未攤銷貸款起始費用沖銷": "營業活動",
+    "先前掉期結算遞延收益攤銷": "營業活動",
+    "利率掉期結算現金流入（流出）": "營業活動",
+    "處分不動產設備損失（收益）": "營業活動",
+    "遞延所得稅": "營業活動",
+    "存貨變動": "營業活動",
+    "所得稅變動": "營業活動",
+    "預付費用及其他資產變動": "營業活動",
+    "應付帳款變動": "營業活動",
+    "應計費用及其他負債變動": "營業活動",
+    "營業活動提供之現金淨額": "營業活動",
+    "併購業務（扣除取得現金）": "投資活動",
+    "外匯避險結算款": "投資活動",
+    "其他資產購置": "投資活動",
+    "不動產、廠房及設備購置": "投資活動",
+    "處分不動產設備收益": "投資活動",
+    "投資活動使用現金淨額": "投資活動",
+    "信用額度淨取得款": "籌資活動",
+    "循環信貸還款": "籌資活動",
+    "債務發行收入": "籌資活動",
+    "定期貸款償還": "籌資活動",
+    "普通股買回與註銷": "籌資活動",
+    "非控股權益分期購買": "籌資活動",
+    "股票薪酬計劃買回淨額": "籌資活動",
+    "債務發行及修改遞延成本": "籌資活動",
+    "掉期協議終止收入": "籌資活動",
+    "籌資活動淨現金流入（流出）": "籌資活動",
+    "匯率變動對現金及約當現金影響": "其他",
+    "現金及約當現金淨變動": "其他",
+    "期初現金及約當現金": "其他",
+    "期末現金及約當現金": "其他",
 
     # 其他來自原始數據的項目
     "動力車輛事業部": "事業部",
@@ -278,6 +396,7 @@ financial_category_map = {
     "投資活動：": "投資活動",
     "籌資活動：": "籌資活動",
 }
+
 
 
 # ➤ 抽取段落文字
@@ -452,4 +571,4 @@ def export_pdf_data_to_excel(pdf_path, output_excel):
 if __name__ == "__main__":
     # 請將 "fox_factory_2025_Q1.pdf" 替換為您的 PDF 文件路徑
     # 請將 "Fox財報資料_整理版1.xlsx" 替換為您希望輸出的 Excel 文件路徑
-    export_pdf_data_to_excel("fox_factory_2024_Q4.pdf", "Fox財報資料_2024_Q4.xlsx")
+    export_pdf_data_to_excel("fox_factory_2024_Q1.pdf", "Fox財報資料_2024_Q1_11.xlsx")
