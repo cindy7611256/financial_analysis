@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>賴姝蓉 Cindy Lai - 數據分析師</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: #ddd;
+            border: 5px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #666;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Content Area */
+        .content {
+            padding-left: 1rem;
+        }
+
+        .experience-item, .education-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #3498db;
+            position: relative;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .date-duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .responsibilities li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        /* About Section */
+        .about-text {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Portfolio Styles */
+        .portfolio-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-btn {
+            padding: 1rem;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .portfolio-btn:hover {
+            border-color: #3498db;
+            background: #f0f8ff;
+        }
+
+        .portfolio-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .portfolio-item {
+            display: none;
+        }
+
+        .portfolio-item.active {
+            display: block;
+        }
+
+        .portfolio-description {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .powerbi-container {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .powerbi-report {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .powerbi-report h4 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .canva-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .canva-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .canva-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .canva-placeholder:hover {
+            transform: translateY(-5px);
+        }
+
+        .canva-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .github-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .github-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .github-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .github-card:hover {
+            border-color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .github-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .github-header i {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .github-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .github-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* D3.js Chart Styles */
+        #d3-chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        #chart-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .chart-btn {
+            padding: 0.5rem 1rem;
+            background: #ecf0f1;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .chart-btn:hover {
+            background: #bdc3c7;
+        }
+
+        .chart-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        #d3-chart {
+            min-height: 350px;
+            width: 100%;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 0.5rem;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Animation */
+        .experience-item, .education-item, .skill-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .skill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar {
+                order: 2;
+            }
+
+            .content {
+                order: 1;
+                padding-left: 0;
+            }
+
+            .portfolio-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .powerbi-container {
+                grid-template-columns: 1fr;
+            }
+
+            .iframe-container {
+                height: 300px;
+            }
+
+            #chart-controls {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-photo">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>賴姝蓉 Cindy Lai</h1>
+            <p class="subtitle">數據分析師 | 商業智能專家</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0958-637-211</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>cindy7611256@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>台中市</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://cindy7611256.github.io/shoe_project/">作品集</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Skills -->
+                <section class="section">
+                    <h2><i class="fas fa-cogs"></i> 核心技能</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-category">數據分析工具</div>
+                            <div>Power BI, Power Query, SQL, Python</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-category">程式語言</div>
+                            <div>Python (pandas, matplotlib), HTML, VS Code</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-category">辦公軟體</div>
+                            <div>Excel, PowerPoint, Word, ERP系統</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-category">設計工具</div>
+                            <div>CSP (Clip Studio Paint), GIF動畫製作</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-category">語言能力</div>
+                            <div>中文、英文 (GEPT中級)、日文 (略懂)</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="section">
+                    <h2><i class="fas fa-certificate"></i> 證照資格</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">TQC-OA 中文輸入/英文輸入</div>
+                        <div class="skill-item">丙級會計事務技術士</div>
+                        <div class="skill-item">重型機車駕照</div>
+                        <div class="skill-item">小型車駕照</div>
+                        <div class="skill-item">CPR證照</div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h2><i class="fas fa-language"></i> 專業技能</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">中文打字: 100字/分鐘</div>
+                        <div class="skill-item">英文打字: 75-100字/分鐘</div>
+                        <div class="skill-item">資料爬蟲技術</div>
+                        <div class="skill-item">商業策略分析</div>
+                        <div class="skill-item">活動企劃執行</div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- About -->
+                <section class="section">
+                    <h2><i class="fas fa-user-circle"></i> 關於我</h2>
+                    <div class="about-text">
+                        我是一位在商業企劃領域積累豐富經驗的數據分析師，專精於從龐大數據中挖掘商業洞察並提供決策支援。近年來深入學習商業智能領域，已具備完整的專業技能作品。我期望能在數據分析領域發揮所長，運用我的分析能力和商業洞察力，協助企業做出更精準的決策。
+                    </div>
+                </section>
+
+                <!-- Portfolio -->
+                <section class="section">
+                    <h2><i class="fas fa-portfolio"></i> 作品集展示</h2>
+                    
+                    <!-- Portfolio Navigation -->
+                    <div class="portfolio-nav">
+                        <button class="portfolio-btn active" data-target="powerbi">
+                            <i class="fas fa-chart-bar"></i> Power BI 報表
+                        </button>
+                        <button class="portfolio-btn" data-target="canva">
+                            <i class="fas fa-presentation"></i> Canva 簡報
+                        </button>
+                        <button class="portfolio-btn" data-target="d3viz">
+                            <i class="fas fa-chart-line"></i> 互動圖表
+                        </button>
+                        <button class="portfolio-btn" data-target="github">
+                            <i class="fab fa-github"></i> GitHub 專案
+                        </button>
+                    </div>
+
+                    <!-- Power BI Section -->
+                    <div id="powerbi" class="portfolio-item active">
+                        <h3>📊 Power BI 商業智能報表</h3>
+                        <p class="portfolio-description">
+                            運用 Power BI 進行企業競爭分析與商業洞察，結合 SQL 資料處理與 Python 前處理技術。
+                        </p>
+                        
+                        <div class="powerbi-container">
+                            <div class="powerbi-report">
+                                <h4>🦊 Fox BI 分析報表</h4>
+                                <div class="iframe-container">
+                                    <iframe title="fox_bi" width="100%" height="400" 
+                                            src="https://app.powerbi.com/view?r=eyJrIjoiM2Y2OWU5NTgtNTE2NC00MDhmLWIzZjMtMWE2ZWQ4ZTVkODdmIiwidCI6IjhlODY2MWQyLTY3OTAtNDI2NC05NDIxLTFiODM2NDVjMmVlZCJ9" 
+                                            frameborder="0" allowFullScreen="true">
+                                    </iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="powerbi-report">
+                                <h4>👟 寶成企業競爭分析</h4>
+                                <div class="iframe-container">
+                                    <iframe title="寶成與競爭對手比對" width="100%" height="400" 
+                                            src="https://app.powerbi.com/view?r=eyJrIjoiNDdlNWIxZDUtNTM5NS00NTZjLTk5YmMtZjVjMmVmODEyZmQxIiwidCI6IjhlODY2MWQyLTY3OTAtNDI2NC05NDIxLTFiODM2NDVjMmVlZCJ9" 
+                                            frameborder="0" allowFullScreen="true">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">數據建模</span>
+                        </div>
+                    </div>
+
+                    <!-- Canva Section -->
+                    <div id="canva" class="portfolio-item">
+                        <h3>🎨 簡報設計作品</h3>
+                        <p class="portfolio-description">
+                            運用 Canva 設計專業簡報，展現視覺設計能力與資訊呈現技巧。
+                        </p>
+                        
+                        <div class="canva-container">
+                            <div class="canva-preview">
+                                <a href="https://www.canva.com/design/DAGu6xqMpa0/yBx-ImHFIh3yHmCtPR6K5A/view?utm_content=DAGu6xqMpa0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h598e5af8be" 
+                                   target="_blank" class="canva-link">
+                                    <div class="canva-placeholder">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <h4>檢視完整簡報</h4>
+                                        <p>點擊開啟 Canva 簡報</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Canva</span>
+                            <span class="tech-tag">視覺設計</span>
+                            <span class="tech-tag">簡報製作</span>
+                            <span class="tech-tag">資訊圖表</span>
+                        </div>
+                    </div>
+
+                    <!-- D3.js Interactive Chart -->
+                    <div id="d3viz" class="portfolio-item">
+                        <h3>📈 互動式資料視覺化</h3>
+                        <p class="portfolio-description">
+                            使用 D3.js 建立互動式圖表，展現前端資料視覺化技能。
+                        </p>
+                        
+                        <div id="d3-chart-container">
+                            <div id="chart-controls">
+                                <button onclick="updateChart('sales')" class="chart-btn active">銷售數據</button>
+                                <button onclick="updateChart('growth')" class="chart-btn">成長率</button>
+                                <button onclick="updateChart('market')" class="chart-btn">市場佔有率</button>
+                            </div>
+                            <div id="d3-chart"></div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">SVG</span>
+                            <span class="tech-tag">互動設計</span>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Project -->
+                    <div id="github" class="portfolio-item">
+                        <h3>💻 GitHub 專案作品</h3>
+                        <p class="portfolio-description">
+                            完整的資料分析專案，包含資料處理、分析與視覺化的完整流程。
+                        </p>
+                        
+                        <div class="github-container">
+                            <a href="https://cindy7611256.github.io/shoe_project/" target="_blank" class="github-link">
+                                <div class="github-card">
+                                    <div class="github-header">
+                                        <i class="fab fa-github"></i>
+                                        <h4>Shoe Project - 鞋業數據分析</h4>
+                                    </div>
+                                    <p>運用 Python、SQL 與 Power BI 進行鞋業市場數據分析，從資料收集到洞察呈現的完整專案。</p>
+                                    <div class="github-stats">
+                                        <span><i class="fas fa-code"></i> Python</span>
+                                        <span><i class="fas fa-database"></i> SQL</span>
+                                        <span><i class="fas fa-chart-pie"></i> Power BI</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="section">
+                    <h2><i class="fas fa-briefcase"></i> 工作經歷</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">賣場服務員</div>
+                        <div class="company">全聯福利中心股份有限公司</div>
+                        <div class="date-duration">2024/5 - 2025/3 (11個月) | 月薪 42,000元</div>
+                        <ul class="responsibilities">
+                            <li>賣場服務與客戶關係維護</li>
+                            <li>商品陳列與銷售(啤酒、飲料、冷凍食品、日用品等)</li>
+                            <li>大量商品販售活動執行</li>
+                            <li>活動主持經驗(午餐蛋活動、足球現場活動等)</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">國內業務專員</div>
+                        <div class="company">專業貿易公司</div>
+                        <div class="date-duration">2024/1 - 2024/3 (3個月) | 月薪 34,000元</div>
+                        <ul class="responsibilities">
+                            <li>客戶開發與關係維護</li>
+                            <li>專案執行並提供解決方案</li>
+                            <li>運用ERP系統進行訂單管理</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">創辦人/賣場管理員</div>
+                        <div class="company">自營事業</div>
+                        <div class="date-duration">2022/4 - 2023/5 (1年2個月)</div>
+                        <ul class="responsibilities">
+                            <li>成功提升利潤10%：在商品定價與獲利之間取得平衡</li>
+                            <li>社群媒體經營：Facebook、IG、LINE@</li>
+                            <li>數位行銷與廣告投放</li>
+                            <li>開發LINE PAY付款功能</li>
