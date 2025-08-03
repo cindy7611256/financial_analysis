@@ -16,22 +16,22 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c3e50 50%, #34495e 100%);
             min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: #f8f9fb;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             min-height: 100vh;
         }
 
         /* Header Section */
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5a87 100%);
             color: white;
             padding: 3rem 2rem;
             text-align: center;
@@ -46,34 +46,27 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.08"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.08"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.1;
         }
 
         .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    border: 5px solid rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    /* 這裡不需要背景色，因為圖片會覆蓋它 */
-}
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #4a6fa5 0%, #5a7fb8 100%);
+            border: 5px solid rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-.profile-photo img {
-    /* 確保圖片填滿整個圓形容器 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 讓圖片填滿空間而不變形 */
-    border-radius: 50%; /* 讓圖片也變成圓形 */
-}
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -518,21 +511,12 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <body>
-    <div class="container">
-        <!-- Header -->
         <header class="header">
-            <!--
             <div class="profile-photo">
-                <img src="https://drive.google.com/uc?export=view&id=1bHqXyvpYYdDPoLec68F93l-OBr9RfIIN" 
-                     alt="我的大頭照" 
-                     style="width: 100px; height: 100px; border-radius: 50%;">
+                <i class="fas fa-user"></i>
             </div>
-            -->
-
             <h1>賴姝蓉 Cindy Lai</h1>
             <p class="subtitle">數據分析師 | 商業智能專家</p>
-
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
@@ -552,8 +536,6 @@
                 </div>
             </div>
         </header>
-
-
 
         <!-- Main Content -->
         <main class="main-content">
@@ -595,7 +577,6 @@
                         <div class="skill-item">重型機車駕照</div>
                         <div class="skill-item">小型車駕照</div>
                         <div class="skill-item">CPR證照</div>
-                        <div class="skill-item">證券商營業員初階</div>
                     </div>
                 </section>
 
@@ -618,18 +599,7 @@
                 <section class="section">
                     <h2><i class="fas fa-user-circle"></i> 關於我</h2>
                     <div class="about-text">
-                        <h3>技能亮點<br></h3>
-• 熟悉 Power BI、Power Query，可從資料整理、欄位轉換到報表視覺化呈現<br>
-• 能使用 SQL 撰寫查詢語句，進行資料提取與清理<br>
-• 掌握 Python 基礎語法，可處理數據、爬蟲<br>
-• 曾與大型企業客戶進行預算簡報與專案提案，具備商務溝通與提案經驗<br>
-• 業務背景強，理解使用者／客戶需求，能將數據轉化為有價值洞察<br>
-<h3>成就簡述<br></h3>
-• 曾主導與知名連鎖品牌的年度合約簡報與預算規劃，協助爭取企劃預算<br>
-• 參與政府職訓課程，從零自學 Power BI 與 SQL，能獨立建構資料流程與互動式報表<br>
-• 協助主管以數據輔助決策，成功降低成本並提高流程效率<br>
-• 具備高度自我驅動與責任感<br>
-
+                        我是一位在商業企劃領域積累豐富經驗的數據分析師，專精於從龐大數據中挖掘商業洞察並提供決策支援。近年來深入學習商業智能領域，已具備完整的專業技能作品。我期望能在數據分析領域發揮所長，運用我的分析能力和商業洞察力，協助企業做出更精準的決策。
                     </div>
                 </section>
 
@@ -638,29 +608,63 @@
                     <h2><i class="fas fa-portfolio"></i> 作品集展示</h2>
                     
                     <!-- Portfolio Navigation -->
-                    <!-- Canva Section -->
-<div id="canva" class="portfolio-item active">
-    <h3>🎨 Canva 簡報作品</h3>
-    <p class="portfolio-description">
-        利用 Canva 製作視覺簡報，強化提案表現與商業溝通力，結合數據分析內容，清楚傳遞核心價值。
-    </p>
+                    <div class="portfolio-nav">
+                        <button class="portfolio-btn active" data-target="fox-dashboard">
+                            <i class="fas fa-chart-area"></i> Fox Factory 財報分析
+                        </button>
+                        <button class="portfolio-btn" data-target="powerbi">
+                            <i class="fas fa-chart-bar"></i> Power BI 報表
+                        </button>
+                        <button class="portfolio-btn" data-target="d3viz">
+                            <i class="fas fa-chart-line"></i> 互動圖表
+                        </button>
+                    </div>
 
-    <div class="canva-container">
-        <div class="canva-report">
-            <h4>🖼️ 作品展示</h4>
-            <div class="iframe-container" style="position: relative; width: 100%; height: 0; padding-top: 56.25%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-bottom: 1.5em;">
-                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" 
-                        src="https://www.canva.com/design/DAGu6xqMpa0/AkMO41veFS2Gc9cITw_Iig/view?embed" 
-                        allowfullscreen="allowfullscreen" allow="fullscreen">
-                </iframe>
-            </div>
-        </div>        
-    </div>
-</div>
+                    <!-- Fox Factory Dashboard -->
+                    <div id="fox-dashboard" class="portfolio-item active">
+                        <div class="fox-dashboard">
+                            <div class="fox-header">
+                                <h3 class="fox-title">🦊 Fox Factory 財務危機分析</h3>
+                                <p class="fox-subtitle">商譽減損與無形資產變化深度分析 (2024-2025)</p>
+                            </div>
+                            
+                            <div class="key-metrics">
+                                <div class="metric-card negative">
+                                    <div class="metric-value">-78億</div>
+                                    <div class="metric-label">2025/4/4 淨損</div>
+                                </div>
+                                <div class="metric-card negative">
+                                    <div class="metric-value">79億</div>
+                                    <div class="metric-label">商譽減損金額</div>
+                                </div>
+                                <div class="metric-card warning">
+                                    <div class="metric-value">-79億</div>
+                                    <div class="metric-label">商譽價值損失</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">113億</div>
+                                    <div class="metric-label">目前商譽價值</div>
+                                </div>
+                            </div>
+                            
+                            <div id="chart-controls">
+                                <button onclick="updateChart('goodwill')" class="chart-btn active">商譽變化分析</button>
+                                <button onclick="updateChart('assets')" class="chart-btn">資產結構</button>
+                                <button onclick="updateChart('waterfall')" class="chart-btn">瀑布圖分析</button>
+                            </div>
+                            <div id="d3-chart"></div>
+                        </div>
                         
+                        <div class="tech-stack">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">財報分析</span>
+                            <span class="tech-tag">資料視覺化</span>
+                            <span class="tech-tag">商業洞察</span>
+                        </div>
+                    </div>
 
                     <!-- Power BI Section -->
-                    <div id="powerbi" class="portfolio-item active">
+                    <div id="powerbi" class="portfolio-item">
                         <h3>📊 Power BI 商業智能報表</h3>
                         <p class="portfolio-description">
                             運用 Power BI 進行企業競爭分析與商業洞察，結合 SQL 資料處理與 Python 前處理技術。
@@ -697,34 +701,6 @@
                         </div>
                     </div>
 
-                    <!-- Canva Section -->
-                    <div id="canva" class="portfolio-item">
-                        <h3>🎨 簡報設計作品</h3>
-                        <p class="portfolio-description">
-                            運用 Canva 設計專業簡報，展現視覺設計能力與資訊呈現技巧。
-                        </p>
-                        
-                        <div class="canva-container">
-                            <div class="canva-preview">
-                                <a href="https://www.canva.com/design/DAGu6xqMpa0/yBx-ImHFIh3yHmCtPR6K5A/view?utm_content=DAGu6xqMpa0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h598e5af8be" 
-                                   target="_blank" class="canva-link">
-                                    <div class="canva-placeholder">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        <h4>檢視完整簡報</h4>
-                                        <p>點擊開啟 Canva 簡報</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">Canva</span>
-                            <span class="tech-tag">視覺設計</span>
-                            <span class="tech-tag">簡報製作</span>
-                            <span class="tech-tag">資訊圖表</span>
-                        </div>
-                    </div>
-
                     <!-- D3.js Interactive Chart -->
                     <div id="d3viz" class="portfolio-item">
                         <h3>📈 互動式資料視覺化</h3>
@@ -732,7 +708,7 @@
                             使用 D3.js 建立互動式圖表，展現前端資料視覺化技能。
                         </p>
                         
-                        <div id="d3-chart-container">
+                        <div class="fox-dashboard">
                             <div id="chart-controls">
                                 <button onclick="updateChart('sales')" class="chart-btn active">銷售數據</button>
                                 <button onclick="updateChart('growth')" class="chart-btn">成長率</button>
@@ -748,38 +724,6 @@
                             <span class="tech-tag">互動設計</span>
                         </div>
                     </div>
-
-                    <!-- GitHub Project -->
-                    <div id="github" class="portfolio-item">
-                        <h3>💻 GitHub 專案作品</h3>
-                        <p class="portfolio-description">
-                            完整的資料分析專案，包含資料處理、分析與視覺化的完整流程。
-                        </p>
-                        
-                        <div class="github-container">
-                            <a href="https://cindy7611256.github.io/financial_analysis/" target="_blank" class="github-link">
-                                <div class="github-card">
-                                    <div class="github-header">
-                                        <i class="fab fa-github"></i>
-                                        <h4>Shoe Project - 鞋業數據分析</h4>
-                                    </div>
-                                    <p>運用 Python、SQL 與 Power BI 進行鞋業市場數據分析，從資料收集到洞察呈現的完整專案。</p>
-                                    <div class="github-stats">
-                                        <span><i class="fas fa-code"></i> Python</span>
-                                        <span><i class="fas fa-database"></i> SQL</span>
-                                        <span><i class="fas fa-chart-pie"></i> Power BI</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Matplotlib</span>
-                            <span class="tech-tag">GitHub Pages</span>
-                        </div>
-                    </div>
                 </section>
 
                 <!-- Work Experience -->
@@ -791,7 +735,7 @@
                         <div class="company">金色三麥餐飲股份有限公司</div>
                         <div class="date-duration">2024/5 - 2025/3 (11個月) | 月薪 42,000元</div>
                         <ul class="responsibilities">
-                            <li>外服務與客戶關係維護</li>
+                            <li>外場服務與客戶關係維護</li>
                             <li>商品陳列與銷售(啤酒、飲料、冷凍食品、日用品等)</li>
                             <li>大樓、量販店、戶外活動商品擺攤銷售</li>
                             <li>活動主持經驗(午餐蛋活動、足球現場活動等)</li>
@@ -802,97 +746,3 @@
                         <div class="job-title">國內業務專員</div>
                         <div class="company">好心地文創</div>
                         <div class="date-duration">2024/1 - 2024/3 (3個月) | 月薪 34,000元</div>
-                        <ul class="responsibilities">
-                            <li>客戶開發與關係維護</li>
-                            <li>專案執行並提供解決方案</li>
-                            <li>運用ERP系統進行訂單管理</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-title">創辦人/店長</div>
-                        <div class="company">煎持餐食（早餐店）</div>
-                        <div class="date-duration">2022/4 - 2023/5 (1年2個月)</div>
-                        <ul class="responsibilities">
-                            <li>成功提升利潤10%：在商品定價與獲利之間取得平衡</li>
-                            <li>社群媒體經營：Facebook、IG、LINE@</li>
-                            <li>數位行銷與廣告投放</li>
-                            <li>開發LINE PAY付款功能</li>
-                            <li>影片剪輯、腳本架構、文宣美編</li>
-                            <li>成本控管</li>
-                          </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-title">行銷企劃</div>
-                        <div class="company">光裕影整合行銷</div>
-                        <div class="date-duration">2016/12 - 2018/3 (1年4個月)</div>
-                        <a href="https://www.facebook.com/watch/?v=715712841933552">主導企劃作品_四驅車拍攝</a>
-                        <ul class="responsibilities">
-                            <li>截至目前2025為止，有225萬觀看數</li>
-                            <li>社群媒體經營：Facebook、IG、LINE@</li>
-                            <li>數位行銷與廣告投放</li>
-                            <li>影片剪輯、腳本架構、文宣美編</li>
-                            <li>成本控管</li>
-                            <li>業務經營，與各大汽車龍頭往來</li>
-                          </ul>
-                    </div>
-
-
-                    <div class="experience-item">
-                        <div class="job-title">業務主任</div>
-                        <div class="company">富邦人壽</div>
-                        <div class="date-duration">2012/11 - 2016/12 (4年2個月)</div>                        
-                        <ul class="responsibilities">
-                            <li>業務開發、經營</li>
-                            <li>社群媒體經營：Facebook、IG、LINE@</li>                            
-                            <li>活動企劃執行</li>
-                            <li>業務新人教育訓練</li>                            
-                          </ul>
-                    </div>
-
-                    <div class="experience-item">
-    <div class="job-title">自我介紹</div>
-    <div class="company">
-        簡單的招式練到極致，就是絕招<br><br>
-
-        <h3>● 關於我<br></h3>
-        　　您好，我是姝蓉，過去在<b>業務</b>與<b>新媒體企劃</b>領域累積了豐富的實戰經驗，擅長在與人互動中建立信任，敏銳察覺客戶需求，更在新媒體企劃中，學會藉由<B>數據分析</B>來預測客群喜好，並擬定符合TA需求的企劃，並提出有效的解決方案。<br>
-        　　近年積極投入數據分析與商業智慧領域學習，已完成數個結合實際商業情境的專案作品。透過以下技能，結合我過往業務經驗與行銷洞察，期望能在數據分析領域發揮跨域優勢，作品集可從這邊觀看：點我瀏覽作品集｜Shoe Project。<br>
-        　　曾擔任 YouTube 知名汽車頻道的行銷企劃，從腳本發想、資料蒐集、預算控管到與店家與廠商洽談，皆能獨立完成，代表作為：「四驅車童年回憶企劃」→ 點我觀看精彩影片。<br><br>
-
-        <h3>● 數據與系統技能<br></h3>
-        • Power BI：可獨立製作儀表板，支援視覺化報表建置與 KPI 追蹤邏輯設計<br>
-        • Python：具備資料分析與基礎開發能力，熟悉 pandas、基礎爬蟲與物件導向概念<br>
-        • SQL：會基本資料查詢與 JOIN，能配合資料清理與轉換流程<br>
-        • 鼎新 ERP：了解 ERP 系統運作邏輯，能協助資料串接與初步分析應用<br>
-        • HTML：可閱讀與基本修改網頁結構，具備數位素養與網站架設能力<br><br>
-
-        <h3>● 實作作品集展示<br></h3>
-        • 商業數據視覺化專案（鞋店銷售分析）：結合 SQL、Power BI 與 Python 資料分析流程，從原始資料清理、顧客行為洞察，到報表輸出。<br>
-        點我瀏覽作品集｜Shoe Project<br><br>
-
-        <h3>● 溝通與業務實戰經驗<br></h3>
-        • 擔任汽車媒體公關與企劃期間，與廠商、記者、品牌總代理建立穩定合作關係，具備良好的簡報與關係經營能力<br>
-        • 熟悉內容行銷邏輯，能以受眾為導向進行市場調研與腳本設計<br>
-        • 在過往業務經歷中，善於與人快速建立信任感，並能自然深入對話，找出痛點並轉化為具體成交<br>
-        • 熟悉預算提報與簡報設計流程，能與大型企業客戶進行提案簡報<br><br>
-
-        <h3>● 學歷與語言能力<br></h3>
-        • 南台科技大學｜休閒事業管理系（具商科背景，擅長成本與會計邏輯）<br>
-        • 基礎英文對話能力，可與外籍人士基本溝通<br>
-        • 台語流利，善於與長輩、田野調查，具高親和力與說服力<br><br>
-
-        <h3>● 興趣與軟實力<br></h3>
-        • 喜歡戶外探索與導覽，擅長營造溫暖、開朗的氛圍<br>
-        • 音樂背景豐富，曾參與熱音社與吉他練習，能快速與團隊建立信任<br>
-        • 學習速度快，具備自我驅動學習力，對新工具與新趨勢保持高度好奇與學習慾<br><br>
-
-        <h3>● 自我期許<br></h3>
-        行銷與數據分析的核心都是洞察人與市場的關係，豐富業務經驗更是透過多重分析市場的即戰力。<br>
-        我期許自己成為能以理性數據為基礎、同時兼顧人情溫度的分析人才。<br>
-        未來希望能結合我對數據的理解力與過往業務／提案／溝通實戰經驗，在企業中創造兼具說服力與效率的分析報告，成為推動決策與創意企劃的橋樑。<br>
-        希望透過這份簡歷與我的作品集，讓您更了解我在數據分析、內容企劃、與溝通上的綜合實力。若有面談機會，我將非常期待與您當面交流！<br>
-        祝各位業績長紅、訂單接到手軟。<br>
-    </div>
-</div>
